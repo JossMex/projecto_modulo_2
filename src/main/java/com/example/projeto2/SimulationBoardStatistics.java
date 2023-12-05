@@ -52,39 +52,26 @@ public class SimulationBoardStatistics extends Thread {
 
     }
 
-    private void print(Map.Entry<Class<? extends Animal>, Integer> entry) {
-        if(entry.getKey().equals(Wolf.class)){
-            System.out.println("🐺: "+ entry.getValue());
-        }else if(entry.getKey().equals(Boa.class)) {
-            System.out.println("🐍: " + entry.getValue());
-        }else if(entry.getKey().equals(Bear.class)) {
-            System.out.println( "🐻:"  + entry.getValue());
-        }else if(entry.getKey().equals(Buffalo.class)) {
-            System.out.println(  "🐃:" + entry.getValue());
-        } else if(entry.getKey().equals(Cabra.class)) {
-            System.out.println( "🐐 : " + entry.getValue());
-        }else if(entry.getKey().equals(Ciervo.class)) {
-            System.out.println("🦌 : " + entry.getValue());
-        }else if(entry.getKey().equals(Duck.class)) {
-            System.out.println( "🦆 : " + entry.getValue());
-        }else if(entry.getKey().equals(Eagle.class)) {
-            System.out.println( "🦅 : " + entry.getValue());
-        }else if(entry.getKey().equals(Fox.class)) {
-            System.out.println(" 🦊 : " + entry.getValue());
-        }else if(entry.getKey().equals(Horse.class)) {
-            System.out.println( "🐎 : " + entry.getValue());
-        }else if(entry.getKey().equals(Jabali.class)) {
-            System.out.println( "🐗 : " + entry.getValue());
-        }else if(entry.getKey().equals(Mouse.class)) {
-            System.out.println("🐁 : " + entry.getValue());
-        }else if(entry.getKey().equals(Oruga.class)) {
-            System.out.println( "🐛 : " + entry.getValue());
-        }else if(entry.getKey().equals(Oveja.class)) {
-            System.out.println( "🐑 : " + entry.getValue());
-        }else if(entry.getKey().equals(Rabbit.class)){
-            System.out.println( "🐇  : "+ entry.getValue());
-        }else {
-            System.out.println(entry.getKey().getName() + ": "+ entry.getValue());
-        }
+    private static final Map<Class<? extends Animal>, String> animalEmojiMap = new HashMap<>();
+    static {
+        animalEmojiMap.put(Wolf.class, "🐺");
+        animalEmojiMap.put(Boa.class, "🐍");
+        animalEmojiMap.put(Bear.class, "🐻");
+        animalEmojiMap.put(Buffalo.class, "🐃");
+        animalEmojiMap.put(Cabra.class, "🐐");
+        animalEmojiMap.put(Ciervo.class, "🦌");
+        animalEmojiMap.put(Duck.class, "🦆");
+        animalEmojiMap.put(Eagle.class, "🦅");
+        animalEmojiMap.put(Fox.class, "🦊");
+        animalEmojiMap.put(Horse.class, "🐎");
+        animalEmojiMap.put(Jabali.class, "🐗");
+        animalEmojiMap.put(Mouse.class, "🐁");
+        animalEmojiMap.put(Oruga.class, "🐛");
+        animalEmojiMap.put(Oveja.class, "🐑");
+        animalEmojiMap.put(Rabbit.class, "🐇");
+    }
+    private void print(Map.Entry<Class<? extends Animal>, Integer>entry){
+        String emoji = animalEmojiMap.getOrDefault(entry.getKey(), entry.getKey().getName());
+        System.out.println(emoji + ": " + entry.getValue());
     }
 }
