@@ -34,7 +34,7 @@ public class HelloApplication /*extends Application*/ {
         Gson gson = new Gson();
 
         try {
-            InputStream inputStream = HelloApplication.class.getResourceAsStream("/settings.json");
+            InputStream inputStream = HelloApplication.class.getResourceAsStream("src/main/resources/settings.json");
             if (inputStream == null) {
                 System.out.println("El archivo settings.json no se encontró.");
                 return;

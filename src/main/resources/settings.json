@@ -1,0 +1,13 @@
+{
+        "Board": {
+        "rows": 30,
+        "columns": 100
+        },
+
+
+        "simulation": {
+        "duration":  500,
+        "statisticsRefreshInterval": 5
+        }
+
+        }

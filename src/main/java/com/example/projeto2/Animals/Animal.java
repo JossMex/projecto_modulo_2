@@ -35,6 +35,7 @@ public abstract class Animal {
         return peso;
     }
 
+
     public abstract Optional<Direction> act(Cell cell);
 
     protected Animal reproduce() {
